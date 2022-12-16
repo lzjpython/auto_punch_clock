@@ -73,9 +73,6 @@ def post(url, data):
 
     sub_email = user_conf.get('sub_email')
     email = user_conf.get('email')
-
-    print(sub_email, email)
-
     subject = '悦动圈早起打卡脚本'
     try:
         response = requests.post(url, data=data, headers=form_headers)
