@@ -57,10 +57,8 @@ def send_mail(to_address_list, subject, message):
     with SMTP_SSL(host=EMAIL_HOST, port=EMAIL_PORT) as smtp:
         # 登录发邮件服务器
         smtp.login(user=EMAIL_HOST_USER, password=EMAIL_HOST_PASSWORD)
-        print('登录成功')
         # 实际发送、接收邮件配置
         smtp.sendmail(from_addr=EMAIL_HOST_USER, to_addrs=to_address_list, msg=msg.as_string())
-        print('发送邮件')
     print(f'发送邮件完毕：收件人{to_address_list}')
 
 
@@ -117,13 +115,11 @@ def do(users, go_to):
             elif go_to == 'punch_clock':
                 form_data["platform"] = platform_conf['platform']
             post(domain + uri, data=form_data)
-            time.sleep(0)
-            # time.sleep(random.randint(30, 180))
+            time.sleep(random.randint(30, 180))
         time.sleep(get_random_time())
 
 
 def get_random_time():
-    return 0
     return random.randint(60, 60 * 10)
 
 
