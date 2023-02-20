@@ -8,6 +8,7 @@ from smtplib import SMTP_SSL
 from email.header import Header
 
 import requests
+import datetime
 
 domain = 'https://api19.51yund.com'
 form_headers = {
@@ -95,7 +96,7 @@ def post(url, data):
         msg = f'[程序异常]Exception:{str(e)}'
         print(msg)
         send_mail(['956573391@qq.com'], subject, msg + raw_data)
-    print('===============')
+    print('{}==============='.format(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 
 
 def do(users, go_to):
