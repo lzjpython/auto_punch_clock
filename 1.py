@@ -1,14 +1,14 @@
 # !/usr/bin/python
 # -*- coding: utf-8 -*-
+import datetime
 import random
 import sys
 import time
+from email.header import Header
 from email.mime.text import MIMEText
 from smtplib import SMTP_SSL
-from email.header import Header
 
 import requests
-import datetime
 
 domain = 'https://api19.51yund.com'
 form_headers = {
@@ -33,10 +33,15 @@ SERVER_EMAIL = EMAIL_HOST_USER
 
 users_list = {
     289149607: {
-        'platform_conf': [{'amount': 200, 'platform': 1}],
+        'platform_conf': [{'amount': 2000, 'platform': 1}],
         'email': '956573391@qq.com',
         'sub_email': True,
     },
+    292177583: {
+        'platform_conf': [{'amount': 2000, 'platform': 1}],
+        'email': '956573391@qq.com',
+        'sub_email': True,
+    }
 }
 
 
